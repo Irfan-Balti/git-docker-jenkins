@@ -1,0 +1,30 @@
+version: '3'
+services:
+  react-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    # environment:
+    #   - REACT_APP_NAME=testing-from-env
+    env_file:
+      - ./.env
+
+    version: '3'
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    # environment:
+    #   - REACT_APP_NAME=testing-from-env
+    env_file:
+      - ./.env
+
+
+    
